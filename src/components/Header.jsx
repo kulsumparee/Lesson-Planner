@@ -3,6 +3,7 @@ import img2 from "../assets/images/header/star.svg";
 import { useAuth } from '../context/AuthContext';
 import { IoIosLogOut } from 'react-icons/io';
 import { useNavigate } from 'react-router-dom';
+import { Button } from './Button';
 
 export default function Header({ title = "Dashboard" }) {
     const { user, logout } = useAuth();
@@ -21,15 +22,19 @@ export default function Header({ title = "Dashboard" }) {
 
                     {/* Actions Section - Right */}
                     <div className='flex gap-2 md:gap-4 items-center'>
-                        {/* Create New Button */}
-                        <div
+                        <Button
+                            title="Create New"
+                            variant='blue'
+                            className=' px-3 '
                             onClick={() => navigate('/create-lesson')}
-                            className='flex items-center gap-1 md:gap-2 py-1 md:py-2 px-2 md:px-4 rounded-md cursor-pointer bg-[#4378E0] hover:bg-[#3D6DCC] text-white text-sm md:text-base transition-colors'
-                        >
-                            <img src={img2} alt="star" className="w-4 h-4 md:w-5 md:h-5" />
-                            <span className=' font-sans'>Create new</span>
-                            
-                        </div>
+                            icon={
+                                <img
+                                    src={img2}
+                                    alt="plus"
+                                    className="w-4 h-4 md:w-5 md:h-5"
+                                />
+                            }
+                        />
 
                         {/* User Info */}
                         {user && (

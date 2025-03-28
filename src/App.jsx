@@ -9,14 +9,18 @@ import ProtectedRoute from './components/ProtectedRoute';
 import SignupForm from './authforms/SignupForm';
 import LoginForm from './authforms/LoginForm';
 import Settings from './pages/Settings';
-import CreateLesson from './subPages/homepage/CreateLesson'; // Import your CreateLesson component
+import CreateLesson from './subPages/homepage/CreateLesson';
+import GenerateLessonPlan from './subPages/homepage/GenerateLessonPlane';
+import Upgrade from './subPages/upgradePro/Upgrade';
 
 const protectedRoutes = [
   { path: "/", element: <Home />, title: "Home" },
   { path: "/recent", element: <Recent />, title: "Recent Activities" },
   { path: "/resources", element: <Resources />, title: "My Resources" },
   { path: "/settings", element: <Settings />, title: "Settings" },
-  { path: "/create-lesson", element: <CreateLesson />, title: "Lesson Plan Creation" } // Add your new route
+  { path: "/create-lesson", element: <CreateLesson />, title: "Lesson Plan Creation" },
+  { path: "/generate-lesson", element: <GenerateLessonPlan />, title: "Lesson Plan Creation" },
+  { path: "/upgrade", element: <Upgrade />, title: "Upgrade" }
 ];
 
 const publicRoutes = [
