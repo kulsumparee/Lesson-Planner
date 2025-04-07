@@ -7,13 +7,16 @@ import web from "../../assets/images/homesubpge/globe.svg"
 import { YourTopicTab } from './YourTopicTab';
 import { YoutTextTab } from './YoutTextTab';
 import { useNavigate } from 'react-router';
-// ... (keep your existing imports)
+import Card from '../../components/Card';
+import crown from "../../assets/images/settings/crown.svg"
+
 
 const CreateLesson = () => {
     const navigate = useNavigate();
 
-    const [activeTab, setActiveTab] = useState('idea'); // 'idea', 'text', or 'webpage'
-    const [activeSection, setActiveSection] = useState('topic'); // 'topic' or 'text'
+    const [activeTab, setActiveTab] = useState('idea');
+    const [activeSection, setActiveSection] = useState('topic');
+    const [showWebpageModal, setShowWebpageModal] = useState(false);
 
     const handleGoBack = () => navigate(-1);
 
@@ -23,9 +26,30 @@ const CreateLesson = () => {
         { img: web, title: "Webpage", id: 'webpage' },
     ];
 
+    const ModalData = [
+        {
+            id: 1,
+            imge: crown,
+            title: "This is a Pro feature",
+            description: "Upgrade to Pro plan to unlock this feature.",
+            buttonTitle: "Upgrade to Pro",
+
+        }
+    ]
     const handleTabClick = (tabId) => {
         setActiveTab(tabId);
-        setActiveSection(tabId === 'idea' ? 'topic' : 'text');
+        setActiveSection(tabId === 'idea' ? 'topic' : 'text'  );
+
+        // Show modal only when webpage is clicked
+        if (tabId === 'webpage') {
+            setShowWebpageModal(true);
+        }
+    };
+
+    const closeModal = () => {
+        setShowWebpageModal(false);
+        setActiveTab('idea'); // Optional: switch back to idea tab
+        setActiveSection('topic');
     };
 
     return (
@@ -56,14 +80,28 @@ const CreateLesson = () => {
                             className={`flex py-2 px-2 md:px-4 rounded-full cursor-pointer gap-1 text-center ${activeTab === item.id ? 'bg-white' : 'bg-transparent'
                                 }`}
                         >
-                            <img src={item.img} alt={item.title} width={25} height={25} />
+                            <img src={item.img} alt={item.title} width={20} height={20} />
                             <p className='text[#2F3A4C] text-sm md:text-md'>{item.title}</p>
                         </div>
                     ))}
-                    <button className='bg-blue-500 md:flex hidden text-white px-4 cursor-pointer py-1 rounded-full'>pro</button>
+                    <button onClick={() => navigate('/settings')} className='bg-blue-500 md:flex hidden text-white px-3 items-center text-center cursor-pointer rounded-full'>pro</button>
                 </div>
             </div>
 
+            {/* Pro Feature Modal */}
+            {showWebpageModal && (
+                <div className="fixed inset-0  bg-[#000000B2] flex justify-center items-center">
+                    <div className="w-full max-w-[600px] h-100 md:ml-40">
+                        <button className="absolute top-2 right-5 text-2xl text-white bg-black w-10 cursor-pointer h-10 rounded-full " onClick={() => closeModal()}>✖</button>
+                        {ModalData.map((cards) => (
+                            <div key={cards.id}>
+                                <Card {...cards} />
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            )}
+    
             {/* Conditional Sections */}
             {activeSection === 'topic' && (
                 <div className='your-topic'>
@@ -76,6 +114,8 @@ const CreateLesson = () => {
                     <YoutTextTab />
                 </div>
             )}
+
+  
 
 
         </div>

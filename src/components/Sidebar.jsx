@@ -4,7 +4,7 @@ import logo from "../assets/images/sidebar/navlogo.svg";
 import logo1 from "../assets/images/sidebar/home.svg";
 import logo2 from "../assets/images/sidebar/clock.svg";
 import logo3 from "../assets/images/sidebar/folder.svg";
-import logo4 from "../assets/images/sidebar/home.svg";
+import logo4 from "../assets/images/sidebar/settings.svg";
 import plane from "../assets/images/sidebar/plane.svg"
 import { Button } from './Button';
 
@@ -29,7 +29,7 @@ export default function Sidebar() {
 
             {/* Navigation Items */}
             <nav className="mt-8 md:mt-14 flex-1">
-                <ul className="space-y-1 md:space-y-2">
+                <ul className="space-y-1 md:space-y-2 ">
                     {navItems.map((item) => (
                         <li key={item.name}>
                             <NavLink
@@ -59,12 +59,12 @@ export default function Sidebar() {
                     </h3>
                     <img src={plane} alt="plane" />
                 </div>
-                <p className=" text-[#6B7280] mb-2 hidden md:block pb-2 text-[14px] ">
-                    Enhance your experience by upgrading your free account
+                <p className=" font-sans text-[#6B7280] mb-2 hidden md:block pb-2 text-[15px] ">
+                    Enhance your experience by upgrading your free account to enjoy premium features
                 </p>
                 <div className="w-full">
                     <Button
-                        onClick={() => navigate('/upgrade')}
+                        onClick={() => navigate('/settings')}
                         variant='gradient'
                         title={<><span className="hidden md:inline">Upgrade</span><span className="md:hidden">↑</span></>}
                         className="w-full text-xs md:text-base p-1 md:p-2"

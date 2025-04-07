@@ -11,7 +11,6 @@ import LoginForm from './authforms/LoginForm';
 import Settings from './pages/Settings';
 import CreateLesson from './subPages/homepage/CreateLesson';
 import GenerateLessonPlan from './subPages/homepage/GenerateLessonPlane';
-import Upgrade from './subPages/upgradePro/Upgrade';
 
 const protectedRoutes = [
   { path: "/", element: <Home />, title: "Home" },
@@ -20,7 +19,6 @@ const protectedRoutes = [
   { path: "/settings", element: <Settings />, title: "Settings" },
   { path: "/create-lesson", element: <CreateLesson />, title: "Lesson Plan Creation" },
   { path: "/generate-lesson", element: <GenerateLessonPlan />, title: "Lesson Plan Creation" },
-  { path: "/upgrade", element: <Upgrade />, title: "Upgrade" }
 ];
 
 const publicRoutes = [
@@ -32,6 +30,7 @@ export default function App() {
   return (
     <Router>
       <AuthProvider>
+        
         <Routes>
           {/* Public Routes */}
           {publicRoutes.map((route) => (
@@ -39,7 +38,7 @@ export default function App() {
               key={route.path}
               path={route.path}
               element={
-                <MainLayout hideSidebar hideHeader title={route.title}>
+                <MainLayout hideSidebar hideheader title={route.title}>
                   {route.element}
                 </MainLayout>
               }

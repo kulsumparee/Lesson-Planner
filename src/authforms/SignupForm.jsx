@@ -14,7 +14,6 @@ export default function SignupForm() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            // In a real app, you would register first then login
             await login({ name, email, password });
             navigate('/dashboard');
         } catch (err) {

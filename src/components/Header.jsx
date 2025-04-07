@@ -5,7 +5,7 @@ import { IoIosLogOut } from 'react-icons/io';
 import { useNavigate } from 'react-router-dom';
 import { Button } from './Button';
 
-export default function Header({ title = "Dashboard" }) {
+export default function Header({ title = "" }) {
     const { user, logout } = useAuth();
     const navigate = useNavigate();
 
@@ -15,8 +15,8 @@ export default function Header({ title = "Dashboard" }) {
                 <div className="flex justify-between items-center">
                     {/* Title Section - Left */}
                     <div className="flex items-center">
-                        <h1 className='font-RobotoSlab text-base md:text-lg truncate max-w-[120px] sm:max-w-none'>
-                            {title}
+                        <h1 className=' text-base md:text-lg truncate max-w-[120px] sm:max-w-none'>
+                            {title} 
                         </h1>
                     </div>
 

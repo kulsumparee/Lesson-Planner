@@ -22,6 +22,10 @@ const GenerateLessonPlan = () => {
                 </button>
             </div>
             <hr className=' text-[#C0C4CA] p-0' />
+
+            <div>
+                
+            </div>
         </div>
     )
 }

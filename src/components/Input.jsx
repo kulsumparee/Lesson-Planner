@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 
-export const Input = ({ title, holder, classname }) => {
+export const Input = ({ title, holder, classname, }) => {
   const [value, setValue] = useState('');
 
   const handleAutofill = () => {

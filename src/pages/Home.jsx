@@ -1,5 +1,4 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import img from "../assets/images/homepge/pana.svg";
 import { useAuth } from '../context/AuthContext';
 import Card from '../components/Card';
@@ -11,7 +10,6 @@ export default function Home() {
             imge: img,
             title: "Lesson Plan",
             description: "Create detailed lesson plan with objectives and activities.",
-            action: "Create lesson plan",
             buttonTitle: "Create Lesson Plan",
             link: "/create-lesson"
         },
