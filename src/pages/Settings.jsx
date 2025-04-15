@@ -11,7 +11,7 @@ const Settings = () => {
     setActiveSection(tab === 'profile' ? 'profile' : 'subs');
   }
   return (
-    <div>
+    <div className='h-full min-h-[1024px] md:min-h-screen'>
       <ul className="flex list-none pb-10 gap-10  text-lg text-[#344054] ">
         <li
           onClick={() => handleTabClick('profile')}

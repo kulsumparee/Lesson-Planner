@@ -4,7 +4,7 @@ import { AuthProvider } from './context/AuthContext';
 import MainLayout from './layouts/MainLayout';
 import Home from './pages/Home';
 import Recent from './pages/Recent';
-import Resources from './pages/Resources';
+import Resources from './pages/Resources'; 
 import ProtectedRoute from './components/ProtectedRoute';
 import SignupForm from './authforms/SignupForm';
 import LoginForm from './authforms/LoginForm';

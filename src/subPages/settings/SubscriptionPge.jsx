@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Button } from "../../components/Button";
-import Card from "../../components/Card";
 
 const SubscriptionPge = () => {
     const [showImage, setShowImage] = useState(false);
@@ -48,11 +47,11 @@ const SubscriptionPge = () => {
 
 
     return (
-        <div className="relative">
-            <div className='md:flex gap-7 space-y-7'>
+        <div className=" relative">
+            <div className='flex flex-wrap gap-7 space-y-7 md:justify-start justify-center'>
                 {Cards.map((data, index) => (
                     <div key={index}>
-                        <div className='bg-white pb-20 w-[310px] rounded-md'>
+                        <div className='bg-white pb-20 w-[290px]  md:w-[310px] rounded-md'>
                             <div className={`${data.topColor} h-3 rounded-t-md`}></div>
                             <div className='p-3'>
                                 <h1 className='text-xl text-[#5D6676]'>{data.plan}</h1>

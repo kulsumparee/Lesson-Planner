@@ -13,8 +13,8 @@ export default function Recent() {
     ];
 
     return (
-        <div>
-            <div className="space-y-4">
+        <div className='h-full min-h-[1024px] md:min-h-screen'>
+            <div className="space-y-4 ">
                 {recentItems.map((item, index) => (
                     <Card key={index} {...item} />
                 ))}

@@ -16,11 +16,13 @@ export default function Home() {
     ];
 
     return (
-        <div className="flex flex-col items-center min-h-screen p-0 py-8 md:py-12">
+        <div className="flex flex-col items-center h-full min-h-[1024px] md:min-h-screen  p-0 py-8 md:py-12">
             {user && (
-                <h1 className="text-2xl md:text-3xl font-medium tracking-wider text-[#161B23] text-center">
-                    Hi, {user.name}
-                </h1>
+                <div key={ user.id}>
+                    <h1 className="text-2xl md:text-3xl font-medium tracking-wider text-[#161B23] text-center">
+                        Hi, {user.name}
+                    </h1>
+             </div>
             )}
             <p className='py-6 md:py-8 text-[#2F3A4C] font-sans text-center max-w-2xl mx-auto px-4'>
                 Let's begin brewing some teaching materials effortlessly with ClassPlanner AI

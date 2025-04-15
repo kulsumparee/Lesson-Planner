@@ -15,7 +15,7 @@ export default function Header({ title = "" }) {
                 <div className="flex justify-between items-center">
                     {/* Title Section - Left */}
                     <div className="flex items-center">
-                        <h1 className=' text-base md:text-lg truncate max-w-[120px] sm:max-w-none'>
+                        <h1 className=' text-base md:text-lg truncate max-w-full sm:max-w-none'>
                             {title} 
                         </h1>
                     </div>
@@ -40,20 +40,14 @@ export default function Header({ title = "" }) {
                         {user && (
                             <div className="flex items-center space-x-2 md:space-x-4">
                                 <img
-                                    className="w-7 h-7 md:w-8 md:h-8 rounded-full"
+                                    className="w-7 h-7 md:w-8 md:h-8 rounded-full hidden md:inline"
                                     src={user.avatar}
                                     alt="User avatar"
                                 />
                                 <span className="text-gray-700 text-sm md:text-base hidden md:inline">
                                     {user.name}
                                 </span>
-                                <button
-                                    onClick={logout}
-                                    className="text-gray-900 text-lg md:text-xl font-bold cursor-pointer hover:text-red-500 transition-colors"
-                                    aria-label="Logout"
-                                >
-                                    <IoIosLogOut />
-                                </button>
+
                             </div>
                         )}
                     </div>
